@@ -9,6 +9,7 @@ Includes fast fuzzy search powered by Fuse.js.
 - `css/` - base, layout, and component styles
 - `js/` - app logic, router, content loader, renderers, slideshow
 - `js/search-service.js` - builds Fuse.js search index and query helpers
+- `fuse.basic.min.mjs` - vendored Fuse.js module used by static hosting (GitHub Pages)
 - `data/content.json` - generated content index consumed by the app
 - `content/` - actual resources (files and slide decks)
 - `scripts/generate-content-index.mjs` - regenerates `data/content.json`

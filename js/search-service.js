@@ -1,4 +1,4 @@
-import Fuse from "../node_modules/fuse.js/dist/fuse.basic.min.mjs";
+import Fuse from "../fuse.basic.min.mjs";
 import { resourceType, toRouteSegment, toTitle } from "./utils.js";
 
 function buildSearchEntries(index) {
