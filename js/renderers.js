@@ -44,16 +44,20 @@ const LEGAL_PAGES = {
   }
 };
 
-function createCard({ title, meta, actions }) {
-  const actionsHtml = actions
-    .map((action) => `<a class="btn ${escapeHtml(action.variant)}" href="${escapeHtml(action.href)}" ${action.external ? 'target="_blank" rel="noopener noreferrer"' : ""}>${escapeHtml(action.label)}</a>`)
-    .join("");
+function createCard({ title, meta, href, hint, external = false }) {
+  const shellTag = href ? "a" : "article";
+  const className = href ? "card card-link" : "card";
+  const attrs = href
+    ? ` href="${escapeHtml(href)}"${external ? ' target="_blank" rel="noopener noreferrer"' : ""}`
+    : "";
+  const hintHtml = hint ? `<p class="card-hint">${escapeHtml(hint)}</p>` : "";
+
   return `
-    <article class="card">
+    <${shellTag} class="${className}"${attrs}>
       <h3 class="card-title">${escapeHtml(title)}</h3>
       <p class="card-meta">${escapeHtml(meta)}</p>
-      <div class="card-actions">${actionsHtml}</div>
-    </article>
+      ${hintHtml}
+    </${shellTag}>
   `;
 }
 
@@ -93,13 +97,8 @@ export function renderHome(index) {
       createCard({
         title: toTitle(tech.name),
         meta: `${tech.categories.length} categories`,
-        actions: [
-          {
-            label: "Open Technology",
-            href: `#/tech/${toRouteSegment(tech.name)}`,
-            variant: "btn-primary"
-          }
-        ]
+        href: `#/tech/${toRouteSegment(tech.name)}`,
+        hint: "Explore resources"
       })
     )
     .join("");
@@ -122,13 +121,8 @@ export function renderTechnology(tech) {
       return createCard({
         title: toTitle(category.name),
         meta: count,
-        actions: [
-          {
-            label: "View Category",
-            href: `#/tech/${toRouteSegment(tech.name)}/${toRouteSegment(category.name)}`,
-            variant: "btn-primary"
-          }
-        ]
+        href: `#/tech/${toRouteSegment(tech.name)}/${toRouteSegment(category.name)}`,
+        hint: "Open category"
       });
     })
     .join("");
@@ -149,13 +143,8 @@ export function renderCategory(tech, category) {
         createCard({
           title: toTitle(deck.name),
           meta: `${deck.slideCount} slides`,
-          actions: [
-            {
-              label: "Start Slideshow",
-              href: `#/slides/${toRouteSegment(tech.name)}/${toRouteSegment(deck.name)}`,
-              variant: "btn-primary"
-            }
-          ]
+          href: `#/slides/${toRouteSegment(tech.name)}/${toRouteSegment(deck.name)}`,
+          hint: "Start slideshow"
         })
       )
       .join("");
@@ -174,14 +163,9 @@ export function renderCategory(tech, category) {
       createCard({
         title: toTitle(resource.filename),
         meta: resourceType(resource.filename),
-        actions: [
-          {
-            label: "Open Resource",
-            href: resource.path,
-            variant: "btn-primary",
-            external: true
-          }
-        ]
+        href: resource.path,
+        hint: "Open resource",
+        external: true
       })
     )
     .join("");
