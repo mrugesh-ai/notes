@@ -21,15 +21,15 @@ export function mountSlideshow(container, { technologyName, deckName, slides }) 
       <h2 class="page-title">${escapeHtml(title)}</h2>
     </div>
     <div class="slideshow-head">
-      <span id="slideCounter" class="pill">1 / ${total}</span>
+      <div class="slideshow-head-left">
+        <span id="slideCounter" class="pill">1 / ${total}</span>
+        <button type="button" class="btn btn-secondary" data-action="prev">Previous</button>
+        <button type="button" class="btn btn-primary" data-action="next">Next</button>
+      </div>
       <a class="btn btn-secondary" href="#/tech/${encodeURIComponent(technologyName)}/slides">Back to decks</a>
     </div>
     <div class="slideshow-stage">
       <img id="slideImage" alt="${escapeHtml(title)}" loading="eager">
-    </div>
-    <div class="slideshow-controls">
-      <button type="button" class="btn btn-secondary" data-action="prev">Previous</button>
-      <button type="button" class="btn btn-primary" data-action="next">Next</button>
     </div>
   `;
 

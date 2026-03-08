@@ -228,21 +228,29 @@
 
 .slideshow {
   display: grid;
-  gap: 0.9rem;
+  gap: 0.7rem;
 }
 
 .slideshow-head {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 0.8rem;
+  gap: 0.65rem;
+  flex-wrap: wrap;
+}
+
+.slideshow-head-left {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+  flex-wrap: wrap;
 }
 
 .slideshow-stage {
   background: #09182f;
   border-radius: var(--radius);
   overflow: hidden;
-  min-height: 260px;
+    min-height: 260px;
   display: grid;
   place-items: center;
 }
