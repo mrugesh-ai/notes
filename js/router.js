@@ -23,6 +23,12 @@ export function createRouter(onRouteChange) {
     if (parts[0] === "legal" && parts[1] && !parts[2]) {
       return { type: "legal", page: parts[1] };
     }
+    if (parts[0] === "search" && !parts[1]) {
+      return { type: "search", query: "" };
+    }
+    if (parts[0] === "search" && parts[1] && !parts[2]) {
+      return { type: "search", query: parts[1] };
+    }
     return { type: "notFound" };
   }
 

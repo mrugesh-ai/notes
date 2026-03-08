@@ -14,6 +14,37 @@
 .header-inner {
   max-width: 1120px;
   margin: 0 auto;
+  position: relative;
+}
+
+.header-top {
+  display: grid;
+  gap: 0.7rem;
+}
+
+.site-search {
+  display: flex;
+  gap: 0.5rem;
+  width: 100%;
+}
+
+.site-search-input {
+  flex: 1;
+  min-width: 0;
+  border: 1px solid #91a9d3;
+  border-radius: 10px;
+  padding: 0.48rem 0.72rem;
+  font: inherit;
+}
+
+.site-search-input:focus-visible {
+  outline: 2px solid #9ebeff;
+  outline-offset: 1px;
+  border-color: #b3c6ea;
+}
+
+.site-search-btn {
+  white-space: nowrap;
 }
 
 .site-title {
@@ -69,6 +100,12 @@
 }
 
 @media (min-width: 768px) {
+  .header-top {
+    grid-template-columns: minmax(0, 1fr) minmax(360px, 480px);
+    align-items: center;
+    gap: 1rem;
+  }
+
   .site-header {
     padding: 1.1rem 1.2rem;
   }

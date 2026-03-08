@@ -1,12 +1,14 @@
 # Dev Resource Library Website
 
 Static developer resource library built with HTML, CSS, and vanilla JavaScript.
+Includes fast fuzzy search powered by Fuse.js.
 
 ## Structure
 
 - `index.html` - single-page shell
 - `css/` - base, layout, and component styles
 - `js/` - app logic, router, content loader, renderers, slideshow
+- `js/search-service.js` - builds Fuse.js search index and query helpers
 - `data/content.json` - generated content index consumed by the app
 - `content/` - actual resources (files and slide decks)
 - `scripts/generate-content-index.mjs` - regenerates `data/content.json`
@@ -26,6 +28,11 @@ Run locally:
 ```bash
 npm run dev
 ```
+
+Search:
+- Use the header search box from any page
+- Live suggestions appear as you type (2+ characters)
+- Press Enter to open full results page (`#/search/<query>`)
 
 ## Add new resources
 

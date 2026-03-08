@@ -61,7 +61,7 @@ function createCard({ title, meta, href, hint, external = false }) {
   `;
 }
 
-export function renderShell({ breadcrumbs, contentHtml }) {
+export function renderShell({ breadcrumbs, contentHtml, searchQuery = "" }) {
   const crumbsHtml = breadcrumbs.length
     ? `<nav class="breadcrumbs">${breadcrumbs
         .map((item, i) => (item.href ? `<a href="${escapeHtml(item.href)}">${escapeHtml(item.label)}</a>${i < breadcrumbs.length - 1 ? " / " : ""}` : `${escapeHtml(item.label)}`))
@@ -71,8 +71,15 @@ export function renderShell({ breadcrumbs, contentHtml }) {
   return `
     <header class="site-header">
       <div class="header-inner">
-        <h1 class="site-title"><a href="#/">Dev Resource Library</a></h1>
+        <div class="header-top">
+          <h1 class="site-title"><a href="#/">Dev Resource Library</a></h1>
+          <form class="site-search" id="siteSearchForm" role="search" autocomplete="off">
+            <input id="siteSearchInput" class="site-search-input" type="search" name="q" placeholder="Search resources, topics, decks..." value="${escapeHtml(searchQuery)}" aria-label="Search resources">
+            <button class="btn btn-secondary site-search-btn" type="submit">Search</button>
+          </form>
+        </div>
         ${crumbsHtml}
+        <div id="searchSuggestions" class="search-suggestions" hidden></div>
       </div>
     </header>
     <main class="site-main">${contentHtml}</main>
@@ -189,6 +196,41 @@ export function renderLegalPage(slug) {
       <h2>${escapeHtml(page.title)}</h2>
       ${page.body}
     </article>
+  `;
+}
+
+export function renderSearch({ query, results }) {
+  const cleanQuery = String(query || "").trim();
+  if (!cleanQuery) {
+    return `
+      <section class="page-head">
+        <h2 class="page-title">Search</h2>
+        <p class="page-desc">Type at least 2 characters in the search box to find technologies, categories, decks, and resources.</p>
+      </section>
+      <section class="notice">Try searches like <code>javascript</code>, <code>interview</code>, <code>promises</code>, or <code>slides</code>.</section>
+    `;
+  }
+
+  const cards = results
+    .map((item) =>
+      createCard({
+        title: item.title,
+        meta: `${item.kind} - ${item.subtitle}`,
+        href: item.href,
+        hint: item.external ? "Open resource" : "Open result",
+        external: item.external
+      })
+    )
+    .join("");
+
+  return `
+    <section class="page-head">
+      <h2 class="page-title">Search: ${escapeHtml(cleanQuery)}</h2>
+      <p class="page-desc">${results.length} result${results.length === 1 ? "" : "s"} found.</p>
+    </section>
+    <section class="grid">
+      ${cards || '<div class="notice">No matching results. Try a broader keyword.</div>'}
+    </section>
   `;
 }
 
