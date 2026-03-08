@@ -114,8 +114,15 @@ export function renderHome(index) {
 
   return `
     <section class="page-head">
-      <h2 class="page-title">Developer Resource Library</h2>
-      <p class="page-desc">Curated by Mrugesh.AI. Browse technologies and access cheatsheets, books, interview prep, and slide decks.</p>
+      <p class="page-desc page-desc-strong">Find high-value learning resources faster, grouped by technology.</p>
+      <p class="page-desc">Access curated cheatsheets, interview prep, books, slides, and topic decks in one place.</p>
+      <div class="resource-highlights" aria-label="Resource highlights">
+        <span class="resource-pill">Cheatsheets</span>
+        <span class="resource-pill">Interview Prep</span>
+        <span class="resource-pill">Books</span>
+        <span class="resource-pill">Slides</span>
+        <span class="resource-pill">Topic Decks</span>
+      </div>
     </section>
     <section class="grid">
       ${cards || '<div class="notice">No technologies found. Add folders under <code>content/</code> and update <code>data/content.json</code>.</div>'}

@@ -12,6 +12,30 @@
   color: var(--muted);
 }
 
+.page-desc-strong {
+  color: var(--text);
+  font-weight: 600;
+}
+
+.resource-highlights {
+  margin-top: 0.75rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+}
+
+.resource-pill {
+  display: inline-flex;
+  align-items: center;
+  border: 1px solid #cfe0ff;
+  background: linear-gradient(135deg, #edf3ff, #f7faff);
+  color: #1d3f77;
+  border-radius: 999px;
+  font-size: 0.82rem;
+  font-weight: 700;
+  padding: 0.24rem 0.62rem;
+}
+
 .grid {
   display: grid;
   grid-template-columns: 1fr;
