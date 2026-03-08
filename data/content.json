@@ -18,9 +18,22 @@
       ]
     }
   },
+  "pandas": {
+    "cheatsheets": [
+      "Pandas-Cheat-Sheet.pdf",
+      "Python Cheatsheet-1.pdf",
+      "Python Cheatsheet-4.pdf"
+    ]
+  },
   "python": {
     "cheatsheets": [
+      "Python Cheatsheet-1.pdf",
+      "Python Cheatsheet-4.pdf",
       "python-basics.svg"
+    ],
+    "interview": [
+      "190_Python_Interview_Questions_and_Answers.pdf",
+      "python most asked questions in interview.pdf"
     ],
     "slides": {
       "basics": [
