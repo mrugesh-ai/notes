@@ -1,0 +1,11 @@
+﻿{
+  "name": "dev-resource-library",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Static dev resource library site",
+  "scripts": {
+    "build:index": "node scripts/generate-content-index.mjs",
+    "dev": "node serve-local.mjs",
+    "start": "npm run dev"
+  }
+}

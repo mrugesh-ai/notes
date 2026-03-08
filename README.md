@@ -15,10 +15,16 @@ Static developer resource library built with HTML, CSS, and vanilla JavaScript.
 
 This is a static website. Open `index.html` from a static server.
 
-Example:
+Install dependencies (none will be downloaded, but this keeps usage standard):
 
 ```bash
-npx serve .
+npm install
+```
+
+Run locally:
+
+```bash
+npm run dev
 ```
 
 ## Add new resources
@@ -28,7 +34,7 @@ npx serve .
 3. Regenerate index:
 
 ```bash
-node scripts/generate-content-index.mjs
+npm run build:index
 ```
 
 4. Commit updated `content/` and `data/content.json`
