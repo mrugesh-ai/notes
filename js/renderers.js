@@ -74,7 +74,6 @@ export function renderShell({ breadcrumbs, contentHtml, searchQuery = "" }) {
         <div class="header-top">
           <div class="site-brand">
             <h1 class="site-title"><a href="#/">Dev Resource Library</a></h1>
-            <p class="site-byline">by <strong>Mrugesh.AI</strong></p>
           </div>
           <form class="site-search" id="siteSearchForm" role="search" autocomplete="off">
             <input id="siteSearchInput" class="site-search-input" type="search" name="q" placeholder="Search resources, topics, decks..." value="${escapeHtml(searchQuery)}" aria-label="Search resources">
@@ -189,7 +188,7 @@ export function renderCategory(tech, category) {
   return `
     <section class="page-head">
       <h2 class="page-title">${escapeHtml(toTitle(tech.name))} / ${escapeHtml(toTitle(category.name))}</h2>
-      <p class="page-desc">Resources are listed automatically from <code>data/content.json</code>.</p>
+      <p class="page-desc">Resources are organized automatically based on the selected technology and category.</p>
     </section>
     <section class="grid">${cards || '<div class="notice">No resources found in this category.</div>'}</section>
   `;
