@@ -1,5 +1,7 @@
 {
-  "ai": {
+  "AI": {
+    "LLM": [],
+    "machine-learning": [],
     "slides": {
       "basics": [
         "ai-timeline.jpg",
@@ -9,6 +11,13 @@
       ],
       "generative-ai": [],
       "machine learning": []
+    }
+  },
+  "DSA": {
+    "slides": {
+      "_default": [
+        "data-strcture.jpg"
+      ]
     }
   },
   "javascript": {
@@ -30,12 +39,35 @@
       ]
     }
   },
+  "mongodb": {
+    "slides": {
+      "_default": [
+        "mongodb-1.jpg",
+        "mongodb-2.jpg",
+        "mongodb-3.jpg",
+        "mongodb-4.jpg",
+        "mongodb-5.jpg",
+        "mongodb-6.jpg",
+        "mongodb-7.jpg",
+        "mongodb-8.jpg"
+      ]
+    }
+  },
   "pandas": {
     "cheatsheets": [
       "Pandas-Cheat-Sheet.pdf",
       "Python Cheatsheet-1.pdf",
       "Python Cheatsheet-4.pdf"
-    ]
+    ],
+    "slides": {
+      "_default": [
+        "basic-data-frame-operators.jpg",
+        "reading-file-in-pandas.jpg",
+        "stastical-analysis-in-pandas.jpg",
+        "what-is-dataframe.jpg",
+        "what-is-pandas.jpg"
+      ]
+    }
   },
   "python": {
     "cheatsheets": [
@@ -49,8 +81,7 @@
     ],
     "slides": {
       "basics": [
-        "01.svg",
-        "02.svg"
+        "python-syllabus.jpg"
       ]
     }
   }
