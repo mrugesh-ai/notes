@@ -72,7 +72,10 @@ export function renderShell({ breadcrumbs, contentHtml, searchQuery = "" }) {
     <header class="site-header">
       <div class="header-inner">
         <div class="header-top">
-          <h1 class="site-title"><a href="#/">Dev Resource Library</a></h1>
+          <div class="site-brand">
+            <h1 class="site-title"><a href="#/">Dev Resource Library</a></h1>
+            <p class="site-byline">by <strong>Mrugesh.AI</strong></p>
+          </div>
           <form class="site-search" id="siteSearchForm" role="search" autocomplete="off">
             <input id="siteSearchInput" class="site-search-input" type="search" name="q" placeholder="Search resources, topics, decks..." value="${escapeHtml(searchQuery)}" aria-label="Search resources">
             <button class="btn btn-secondary site-search-btn" type="submit">Search</button>
@@ -92,7 +95,6 @@ export function renderShell({ breadcrumbs, contentHtml, searchQuery = "" }) {
           <a href="#/legal/copyright">Copyright / Removal Policy</a>
           <a href="#/legal/contact">Contact</a>
         </nav>
-        <p class="footer-meta">For requests: <a href="mailto:mrugeshp.ai@gmail.com">mrugeshp.ai@gmail.com</a></p>
       </div>
     </footer>
   `;
@@ -113,7 +115,7 @@ export function renderHome(index) {
   return `
     <section class="page-head">
       <h2 class="page-title">Developer Resource Library</h2>
-      <p class="page-desc">Browse technologies and access curated cheatsheets, books, interview prep, and slide decks.</p>
+      <p class="page-desc">Curated by Mrugesh.AI. Browse technologies and access cheatsheets, books, interview prep, and slide decks.</p>
     </section>
     <section class="grid">
       ${cards || '<div class="notice">No technologies found. Add folders under <code>content/</code> and update <code>data/content.json</code>.</div>'}
