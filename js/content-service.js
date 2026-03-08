@@ -31,7 +31,7 @@ export function normalizeIndex(raw) {
           files.sort(naturalCompare);
           const slides = files.map((filename) => ({
             filename,
-            path: `content/${tech}/slides/${deck}/${filename}`
+            path: deck === "_default" ? `content/${tech}/slides/${filename}` : `content/${tech}/slides/${deck}/${filename}`
           }));
           return {
             name: deck,

@@ -1,4 +1,4 @@
-import { escapeHtml, toTitle } from "./utils.js";
+import { escapeHtml, slideDeckLabel, toTitle } from "./utils.js";
 
 function clamp(value, min, max) {
   return Math.max(min, Math.min(value, max));
@@ -13,13 +13,12 @@ export function mountSlideshow(container, { technologyName, deckName, slides }) 
     return () => {};
   }
 
-  const title = `${toTitle(deckName)} Slides`;
+  const title = deckName === "_default" ? `${toTitle(technologyName)} Slides` : `${slideDeckLabel(deckName)} Slides`;
   const root = document.createElement("section");
   root.className = "slideshow";
   root.innerHTML = `
     <div class="page-head">
       <h2 class="page-title">${escapeHtml(title)}</h2>
-      <p class="page-desc">${escapeHtml(toTitle(technologyName))}</p>
     </div>
     <div class="slideshow-head">
       <span id="slideCounter" class="pill">1 / ${total}</span>

@@ -1,5 +1,5 @@
 import Fuse from "../fuse.basic.min.mjs";
-import { resourceType, toRouteSegment, toTitle } from "./utils.js";
+import { resourceType, slideDeckLabel, toRouteSegment, toTitle } from "./utils.js";
 
 function buildSearchEntries(index) {
   const entries = [];
@@ -36,7 +36,7 @@ function buildSearchEntries(index) {
 
       if (category.kind === "slides") {
         for (const deck of category.decks) {
-          const deckTitle = toTitle(deck.name);
+          const deckTitle = slideDeckLabel(deck.name);
           entries.push({
             id: `deck:${tech.name}:${deck.name}`,
             kind: "Slides Deck",

@@ -39,6 +39,7 @@ Search:
 
 1. Place files in `content/<technology>/<category>/...`
 2. For slides, use `content/<technology>/slides/<deck>/01.png` style ordering
+   - You can also place slide images directly in `content/<technology>/slides/`; they will appear as a default deck.
 3. Regenerate index:
 
 ```bash

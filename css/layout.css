@@ -7,7 +7,7 @@
 .site-header {
   background: linear-gradient(120deg, #102346, #173f7a);
   color: #fff;
-  padding: 1rem;
+  padding: 10px;
   box-shadow: var(--shadow);
 }
 
@@ -119,7 +119,7 @@
   }
 
   .site-header {
-    padding: 1.1rem 1.2rem;
+    padding: 10px 1.2rem;
   }
 
   .site-main {

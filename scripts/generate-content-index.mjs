@@ -37,6 +37,14 @@ async function buildIndex() {
           const deckPath = path.join(categoryPath, deck);
           deckMap[deck] = await listFiles(deckPath);
         }
+
+        // Support slides placed directly in content/<tech>/slides/
+        // by grouping them into a default deck.
+        const rootSlideFiles = await listFiles(categoryPath);
+        if (rootSlideFiles.length > 0) {
+          deckMap["_default"] = rootSlideFiles;
+        }
+
         techEntry[category] = deckMap;
       } else {
         techEntry[category] = await listFiles(categoryPath);

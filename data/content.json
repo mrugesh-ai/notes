@@ -1,4 +1,16 @@
 {
+  "ai": {
+    "slides": {
+      "basics": [
+        "ai-timeline.jpg",
+        "ai-universe.jpg",
+        "machine-learning-algorithm.jpg",
+        "types-of-machine-learning.jpg"
+      ],
+      "generative-ai": [],
+      "machine learning": []
+    }
+  },
   "javascript": {
     "books": [
       "clean-code-notes.txt"

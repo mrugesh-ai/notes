@@ -2,7 +2,7 @@ import { loadContentIndex, getTechnology, getCategory, getDeck } from "./content
 import { createRouter } from "./router.js";
 import { renderShell, renderHome, renderTechnology, renderCategory, renderLegalPage, renderSearch, renderNotFound } from "./renderers.js";
 import { mountSlideshow } from "./slideshow.js";
-import { escapeHtml, toTitle, toRouteSegment } from "./utils.js";
+import { escapeHtml, slideDeckLabel, toTitle, toRouteSegment } from "./utils.js";
 import { createSearchEngine } from "./search-service.js";
 
 const app = document.getElementById("app");
@@ -189,7 +189,7 @@ function startApp(index) {
           { label: "Home", href: "#/" },
           { label: toTitle(tech.name), href: `#/tech/${toRouteSegment(tech.name)}` },
           { label: "Slides", href: `#/tech/${toRouteSegment(tech.name)}/slides` },
-          { label: toTitle(deck.name) }
+          { label: slideDeckLabel(deck.name) }
         ],
         html: '<section id="slideshowMount"></section>',
         searchEngine,

@@ -52,3 +52,7 @@ export function resourceType(filename) {
   if (["png", "jpg", "jpeg", "webp", "svg", "gif", "avif"].includes(ext)) return "Image";
   return ext ? ext.toUpperCase() : "File";
 }
+
+export function slideDeckLabel(deckName) {
+  return String(deckName) === "_default" ? "All Slides" : toTitle(deckName);
+}

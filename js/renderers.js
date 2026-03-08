@@ -1,4 +1,4 @@
-import { escapeHtml, resourceType, toRouteSegment, toTitle } from "./utils.js";
+import { escapeHtml, resourceType, slideDeckLabel, toRouteSegment, toTitle } from "./utils.js";
 
 const LEGAL_PAGES = {
   disclaimer: {
@@ -156,7 +156,7 @@ export function renderCategory(tech, category) {
     const cards = category.decks
       .map((deck) =>
         createCard({
-          title: toTitle(deck.name),
+          title: slideDeckLabel(deck.name),
           meta: `${deck.slideCount} slides`,
           href: `#/slides/${toRouteSegment(tech.name)}/${toRouteSegment(deck.name)}`,
           hint: "Start slideshow"
