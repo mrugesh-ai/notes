@@ -1,0 +1,151 @@
+.page-head {
+  margin-bottom: 1rem;
+}
+
+.page-title {
+  margin: 0;
+  font-size: 1.45rem;
+}
+
+.page-desc {
+  margin: 0.35rem 0 0;
+  color: var(--muted);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.85rem;
+}
+
+@media (min-width: 640px) {
+  .grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 980px) {
+  .grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 0.95rem;
+  box-shadow: var(--shadow);
+}
+
+.card-title {
+  margin: 0;
+  font-size: 1.08rem;
+}
+
+.card-meta {
+  margin: 0.35rem 0 0;
+  color: var(--muted);
+}
+
+.card-actions {
+  margin-top: 0.8rem;
+  display: flex;
+  gap: 0.55rem;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 9px;
+  border: 1px solid transparent;
+  padding: 0.48rem 0.72rem;
+  text-decoration: none;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.btn-primary {
+  background: var(--primary);
+  color: #fff;
+}
+
+.btn-secondary {
+  border-color: var(--border);
+  color: var(--text);
+  background: #fff;
+}
+
+.pill {
+  display: inline-block;
+  background: var(--accent-soft);
+  color: #17408b;
+  border-radius: 999px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  padding: 0.2rem 0.55rem;
+}
+
+.notice {
+  border: 1px solid var(--border);
+  background: #fff;
+  border-radius: var(--radius);
+  padding: 0.9rem;
+}
+
+.notice.error {
+  background: var(--danger-soft);
+  border-color: #ffc4c4;
+}
+
+.legal-block {
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1rem;
+}
+
+.legal-block h2 {
+  margin: 0 0 0.7rem;
+}
+
+.legal-block p,
+.legal-block li {
+  color: var(--text);
+}
+
+.slideshow {
+  display: grid;
+  gap: 0.9rem;
+}
+
+.slideshow-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.8rem;
+}
+
+.slideshow-stage {
+  background: #09182f;
+  border-radius: var(--radius);
+  overflow: hidden;
+  min-height: 260px;
+  display: grid;
+  place-items: center;
+}
+
+.slideshow-stage img {
+  width: 100%;
+  height: auto;
+  max-height: 72vh;
+  object-fit: contain;
+  display: block;
+}
+
+.slideshow-controls {
+  display: flex;
+  justify-content: center;
+  gap: 0.8rem;
+}

@@ -1,0 +1,45 @@
+:root {
+  --bg: #f5f7fb;
+  --surface: #ffffff;
+  --text: #152238;
+  --muted: #5c667a;
+  --primary: #0b63f3;
+  --border: #dbe2ee;
+  --accent-soft: #e8f0ff;
+  --danger-soft: #fff2f2;
+  --shadow: 0 6px 18px rgba(21, 34, 56, 0.08);
+  --radius: 12px;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+  background: radial-gradient(circle at top right, #eef4ff 0%, var(--bg) 40%);
+  color: var(--text);
+  min-height: 100vh;
+  line-height: 1.5;
+}
+
+a {
+  color: var(--primary);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+button {
+  font: inherit;
+}

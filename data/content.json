@@ -1,0 +1,32 @@
+{
+  "javascript": {
+    "books": [
+      "clean-code-notes.txt"
+    ],
+    "cheatsheets": [
+      "array-methods.svg",
+      "promises-cheatsheet.pdf"
+    ],
+    "interview": [
+      "javascript-interview-questions.pdf"
+    ],
+    "slides": {
+      "ajax": [
+        "01.svg",
+        "02.svg",
+        "03.svg"
+      ]
+    }
+  },
+  "python": {
+    "cheatsheets": [
+      "python-basics.svg"
+    ],
+    "slides": {
+      "basics": [
+        "01.svg",
+        "02.svg"
+      ]
+    }
+  }
+}

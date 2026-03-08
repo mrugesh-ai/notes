@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="700" viewBox="0 0 1200 700">
+  <rect width="1200" height="700" fill="#12396e" />
+  <text x="80" y="140" font-size="56" font-family="Segoe UI" fill="#ffffff">AJAX Fundamentals</text>
+  <text x="80" y="220" font-size="30" font-family="Segoe UI" fill="#dce9ff">Slide 02 - XMLHttpRequest Flow</text>
+</svg>

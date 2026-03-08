@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="520" viewBox="0 0 900 520">
+  <rect width="900" height="520" fill="#f1f7ff" />
+  <rect x="40" y="40" width="820" height="440" rx="20" fill="#ffffff" stroke="#c7dbff" />
+  <text x="80" y="140" font-size="44" font-family="Segoe UI" fill="#143569">JavaScript Array Methods</text>
+  <text x="80" y="210" font-size="28" font-family="Segoe UI" fill="#3c5075">map, filter, reduce, find, some, every</text>
+</svg>

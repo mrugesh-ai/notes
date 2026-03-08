@@ -1,51 +1,36 @@
-# Dev Resource Library
+# Dev Resource Library Website
 
-A fast, lightweight website for discovering developer learning resources such as:
+Static developer resource library built with HTML, CSS, and vanilla JavaScript.
 
-- Cheatsheets
-- Interview preparation PDFs
-- Books
-- Slide decks
+## Structure
 
-The goal of this project is to build a **clean, easy-to-navigate resource hub** where developers can quickly access useful study materials without digging through large collections or chat groups.
+- `index.html` - single-page shell
+- `css/` - base, layout, and component styles
+- `js/` - app logic, router, content loader, renderers, slideshow
+- `data/content.json` - generated content index consumed by the app
+- `content/` - actual resources (files and slide decks)
+- `scripts/generate-content-index.mjs` - regenerates `data/content.json`
 
-This site does **not provide tutorials or authored content**. Instead, it organizes and presents publicly available learning resources.
+## Local use
 
----
+This is a static website. Open `index.html` from a static server.
 
-# Project Goals
+Example:
 
-The project focuses on the following principles:
+```bash
+npx serve .
+```
 
-- Minimal website maintenance
-- Fast loading static website
-- Clean UI for developers
-- Easy navigation
-- Automatically growing resource library
-- Folder-based content management
+## Add new resources
 
-New resources can be added simply by placing files into the correct folders.
+1. Place files in `content/<technology>/<category>/...`
+2. For slides, use `content/<technology>/slides/<deck>/01.png` style ordering
+3. Regenerate index:
 
-No manual page creation is required.
+```bash
+node scripts/generate-content-index.mjs
+```
 
----
+4. Commit updated `content/` and `data/content.json`
 
-# Technology Stack
-
-This project intentionally uses a very simple stack:
-
-- HTML
-- CSS
-- Vanilla JavaScript
-
-The site is designed to run as a **static website** and can be hosted using platforms such as **GitHub Pages**.
-
-No backend server is required.
-
----
-
-# How Content Works
-
-All resources live inside the `/content` directory.
-
-Example structure:
+No manual page creation is needed.
